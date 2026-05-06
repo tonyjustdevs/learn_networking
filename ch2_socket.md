@@ -27,6 +27,10 @@ Call `socket()` system routine:
 - wrapped (encapsulated) in a header by `TFTP` protocol
 - then wrapped by next protocol `UDP`
 - then `IP`
-- then final protocol on hardware (physical) layer (e.g. Ethernet)
+- then final protocol on hardware (physical) layer (e.g. `Ethernet`)
 
 **Receiving**:
+- Another computer receives packet
+- **hardware** strips `Ethernet` header
+- **kernel** strips `IP` & `UDP` headers
+- **TFTP** program strips `TFTP` header
